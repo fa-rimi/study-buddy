@@ -31,6 +31,9 @@ app.use(express.static(distPath));
 const authAPIRouter = require("./routes/authAPI");
 app.use("/", authAPIRouter);
 
+const dictionaryAPIRouter = require("./routes/dictionaryAPI");
+app.use("/", dictionaryAPIRouter);
+
 /**-----------------|
  **Catch All Route* |
  * -----------------|
