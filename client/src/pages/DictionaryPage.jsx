@@ -142,22 +142,12 @@ const DictionaryPg = () => {
   };
 
   return (
-    <div className="flex flex-row w-[100vw] h-[100vh]">
-      <nav className="w-[60px]">
+    <div className="flex w-[100vw] h-[100vh]">
+      <nav className="w-[60px] fixed">
         <NavBar />
       </nav>
 
-      <div className="flex w-[100vw] h-full">
-        <span className="flex flex-row items-center fixed top-5 right-5">
-          <button
-            onClick={openPopup}
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 p-3 mr-4 top-[25px] right-[500px] fixed">
-            <BsPlusLg size={30} />
-          </button>
-        </span>
-      </div>
-
-      <div className="flex w-[100vw]">
+      <div>
         {isPopupOpen && (
           <div className="fixed inset-0 flex items-center justify-center z-50">
             <div className="absolute inset-0 bg-gray-600 opacity-70"></div>
@@ -176,42 +166,53 @@ const DictionaryPg = () => {
           </div>
         )}
       </div>
-      <main className="flex w-[100vw]">
+      <main>
         <div>
-          <h2>Words</h2>
-          <form className="relative">
-            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <svg
-                className="w-4 h-4 text-gray-500 dark:text-gray-400"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 20 20">
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                />
-              </svg>
-            </div>
-            <input
-              type="search"
-              id="default-search"
-              className="block w-[500px] p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Search Word"
-              value={searchTerm}
-              onChange={handleSearchTermChange}
-              required
-            />
-            <button
-              type="submit"
-              className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-              Search
-            </button>
-          </form>
-          <table className="table-auto">
+          <div>
+            <h2 className="relative text-[70px] left-24 top-10">Words</h2>
+            <form className="fixed right-5 top-16">
+              <div>
+                <span className="flex flex-row items-center fixed right-[520px]">
+                  <button
+                    onClick={openPopup}
+                    className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 p-3 mr-4">
+                    <BsPlusLg size={30} />
+                  </button>
+                </span>
+              </div>
+              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <svg
+                  className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 20 20">
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                  />
+                </svg>
+              </div>
+              <input
+                type="search"
+                id="default-search"
+                className="block w-[500px] p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Search Word"
+                value={searchTerm}
+                onChange={handleSearchTermChange}
+                required
+              />
+              <button
+                type="submit"
+                className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Search
+              </button>
+            </form>
+          </div>
+          <table className="table-auto w-[90vw] relative top-24 left-24">
             <thead>
               <tr>
                 <th className="px-4 py-2">Word</th>
