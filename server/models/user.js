@@ -1,19 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-
-const dictionarySchema = new Schema({
-  word: {
-    type: String,
-    required: true,
-  },
-  definition: {
-    type: String,
-    required: true,
-  },
-  example: {
-    type: String,
-  },
-});
+const Dictionary = require('./dictionary');
 
 const userSchema = new Schema(
   {
@@ -33,7 +20,13 @@ const userSchema = new Schema(
       minLength: 6,
       required: true,
     },
-    dictionary: [dictionarySchema], // Embed the dictionary schema here
+    dictionary: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Dictionary',
+      },
+    ],
+
   },
   { timestamps: true }
 );
