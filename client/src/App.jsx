@@ -7,6 +7,7 @@ import SignUp from "./components/authorization/SignUp";
 import HomePage from "./pages/HomePage";
 import { Toaster } from "react-hot-toast";
 import "./index.css";
+import DictionaryPage from "./pages/DictionaryPage";
 
 axios.defaults.baseURL = "http://localhost:3001/";
 axios.defaults.withCredentials = true;
@@ -33,6 +34,9 @@ function App() {
 
           {/* Route for the Home component */}
           <Route path="/Home" element={<HomePage />} />
+
+          {/* Route for the Dictionary component */}
+          <Route path="/Dictionary" element={<DictionaryPage />} />
 
           {/* Fallback route for the root URL "/", also conditionally rendering Home or AuthPg */}
           <Route path="/" element={user ? homePage : authPage} />
