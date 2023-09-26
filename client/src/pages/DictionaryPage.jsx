@@ -83,9 +83,14 @@ const DictionaryPg = () => {
     setSearchTerm(e.target.value);
   };
 
-  const filteredWords = words.filter((word) =>
-    word.word.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredWords = words.filter((word) => {
+    const lowercaseWord = word.word.toLowerCase();
+    const lowercaseSearchTerm = searchTerm.toLowerCase();
+    console.log("Lowercase Word:", lowercaseWord);
+    console.log("Lowercase Search Term:", lowercaseSearchTerm);
+    console.log("Is Included?", lowercaseWord.includes(lowercaseSearchTerm));
+    return lowercaseWord.includes(lowercaseSearchTerm);
+  });
 
   const handleUpdate = async (updatedWord) => {
     try {
