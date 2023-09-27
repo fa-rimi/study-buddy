@@ -18,7 +18,7 @@
 
 ## About the Project
 
-**Study Buddy** is a user-friendly dictionary application designed to help users search for word definitions and examples. It also allows users to contribute by adding new words to the dictionary.
+**Study Buddy** is a user-friendly dictionary application designed to help users search for word, definitions, and examples. It also allows users to contribute by adding new words to the dictionary.
 
 ### Key Features
 
