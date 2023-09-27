@@ -93,8 +93,9 @@ Before you begin, ensure you have met the following requirements:
 
 
 ### In The Future
-1. Work on relational data so multiple users can have unique dictionaries
-2. Tag feature - user can add max 3 tags to each word
-3. Multiple dictionary per user capability 
-4. Home Page will have a digital planner
-5. ChatBot
+1. Fix user authorization and authentication 
+2. Work on relational data so multiple users can have unique dictionaries
+3. Tag feature - user can add max 3 tags to each word
+4. Multiple dictionary per user capability 
+5. Home Page will have a digital planner
+6. ChatBot
