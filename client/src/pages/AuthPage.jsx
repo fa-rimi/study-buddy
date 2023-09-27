@@ -1,6 +1,9 @@
+import SignIn from "../components/authorization/SignIn"
 const AuthPage = () => {
   return (
-    <div>AuthPage</div>
+    <div>
+      <SignIn/>
+    </div>
   )
 }
 
