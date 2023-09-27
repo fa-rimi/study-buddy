@@ -169,7 +169,7 @@ const DictionaryPg = () => {
       <main>
         <div>
           <div>
-            <h2 className="relative text-[70px] left-24 top-10">Words</h2>
+            <h2 className="fixed text-[70px] left-24 top-10">Words</h2>
             <form className="fixed right-5 top-16">
               <div>
                 <span className="flex flex-row items-center fixed right-[520px]">
@@ -212,7 +212,7 @@ const DictionaryPg = () => {
               </button>
             </form>
           </div>
-          <table className="table-auto w-[90vw] relative top-24 left-24">
+          <table className="table-auto w-[90vw] relative top-40 left-24">
             <thead>
               <tr>
                 <th className="px-4 py-2">Word</th>

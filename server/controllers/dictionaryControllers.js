@@ -5,6 +5,14 @@ const newEntry = async (req, res) => {
     // Extract the word data from the request body
     const { word, definition, example } = req.body;
 
+    // Check if the word already exists in the dictionary
+    const existingWord = await Dictionary.findOne({ word });
+
+    if (existingWord) {
+      // If the word exists, send an error response
+      return res.status(400).json({ error: "Word already exists" });
+    }
+
     // Create a new word entry
     const newWord = new Dictionary({
       word,
@@ -28,7 +36,7 @@ const newEntry = async (req, res) => {
 const displayWords = async (req, res) => {
   try {
     // Fetch all words from the database
-    const words = await Dictionary.find();
+    const words = await Dictionary.find().sort({ word: "asc" });
 
     // Send the words as a JSON response
     res.json(words);

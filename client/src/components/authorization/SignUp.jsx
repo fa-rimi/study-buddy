@@ -37,7 +37,7 @@ const SignUp = () => {
       });
 
       if (response.data.error) {
-        toast.error(response.data.error);
+        toast.error(response.data.error); // Todo: Fix this
       } else {
         setRegisterData({
           name: "",
@@ -47,20 +47,21 @@ const SignUp = () => {
         });
 
         toast.success("Registered successfully");
-        toast.success(`${name}'s dictionary created.`);
+        toast.success(`${name}'s dictionary created`);
 
         navigate("/Home");
         toast.success("Register Success");
       }
     } catch (error) {
       console.error(error);
+      toast.error("Error: Please check all fields");
     }
   };
 
   return (
     <div className="flex items-center justify-center h-screen">
-      <div className="bg-blue-400 p-6 rounded-md shadow-md w-80">
-        <h2 className="text-2xl font-semibold mb-4">Sign Up</h2>
+      <div className="bg-blue-400 p-6 rounded-md shadow-md w-80 text-center">
+        <h2 className="text-[50px] font-semibold mb-4">Sign Up</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text"
@@ -89,7 +90,7 @@ const SignUp = () => {
             required
             className="border rounded-md py-2 px-3 w-full"
           />
-          <div className="password-confirm flex items-center border rounded-md py-2 px-3 w-full">
+          <div className="password-confirm flex items-center rounded-md w-full relative">
             <input
               type="password"
               name="confirm"
@@ -97,10 +98,10 @@ const SignUp = () => {
               value={registerData.confirm}
               onChange={handleChange}
               required
-              className="w-full"
+              className="border rounded-md py-2 px-3 w-full"
             />
             {isPasswordValid && (
-              <FaCheckCircle className="checkmark-icon" color="green" />
+              <FaCheckCircle className="checkmark-icon absolute right-3" color="green"/>
             )}
           </div>
           <button

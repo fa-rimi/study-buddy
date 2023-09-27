@@ -55,8 +55,8 @@ const SignIn = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      <div className="bg-blue-400 p-6 rounded-md shadow-md w-80">
-        <h2 className="text-2xl font-semibold mb-4">Sign In</h2>
+      <div className="bg-blue-400 p-6 rounded-md shadow-md w-80 text-center">
+        <h2 className="text-[50px] font-semibold mb-4">Sign In</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="email"
@@ -67,7 +67,7 @@ const SignIn = () => {
             required
             className="border rounded-md py-2 px-3 w-full"
           />
-          <div className="password-input flex items-center border rounded-md py-2 px-3 w-full">
+          <div className="password-input flex items-center rounded-md w-full relative">
             <input
               type={showPassword ? "text" : "password"}
               name="password"
@@ -75,10 +75,10 @@ const SignIn = () => {
               value={loginData.password}
               onChange={handleChange}
               required
-              className="w-full"
+              className="border rounded-md py-2 px-3 w-full"
             />
             <span
-              className="password-toggle ml-2 cursor-pointer"
+              className="password-toggle absolute cursor-pointer right-3"
               onClick={handlePasswordToggle}>
               {showPassword ? <FaEyeSlash /> : <FaEye />}
             </span>

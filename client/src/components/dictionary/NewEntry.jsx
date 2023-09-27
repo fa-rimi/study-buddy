@@ -52,7 +52,7 @@ const NewEntry = () => {
       }
     } catch (error) {
       console.error(error);
-      toast.error("Error: Please try again later.");
+      toast.error("Error: Does word exist?");
     }
   };
 
