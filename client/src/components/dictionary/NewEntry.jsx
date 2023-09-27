@@ -73,6 +73,7 @@ const NewEntry = () => {
               onChange={handleChange}
               value={entryData.word}
               className="border rounded-md py-2 px-3 mt-1"
+              autoComplete="off"
             />
           </div>
           <div className="flex flex-col">
@@ -87,6 +88,7 @@ const NewEntry = () => {
               value={entryData.definition}
               className="border rounded-md py-2 px-3 mt-1 max-h-[200px]"
               rows="2"
+              autoComplete="off"
             />
           </div>
           <div className="flex flex-col">
@@ -102,6 +104,7 @@ const NewEntry = () => {
               value={entryData.example}
               className="border rounded-md py-2 px-3 mt-1 max-h-[250px]"
               rows="2"
+              autoComplete="off"
             />
           </div>
           <button

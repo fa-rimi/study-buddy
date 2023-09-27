@@ -43,7 +43,7 @@ const ShowWord = ({ word, onClose, onDelete }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
       <div className="absolute inset-0 bg-gray-600 opacity-70"></div>
-      <div className="relative bg-gray-100 rounded-lg shadow-lg p-4 w-[800px] h-[800px]">
+      <div className="relative bg-white rounded-lg shadow-lg p-4 w-[800px] h-[800px]">
         <button
           onClick={onClose}
           className="absolute top-[30px] right-[30px] m-2 text-gray-600 hover:text-red-500">
@@ -51,10 +51,10 @@ const ShowWord = ({ word, onClose, onDelete }) => {
         </button>
         {isEditing ? (
           <div>
-            <h2>Update Word</h2>
-            <form>
-              <div className="mb-4">
-                <label htmlFor="updatedWord" className="block mb-2">
+            <h2 className="text-2xl font-semibold mb-4">Update Word</h2>
+            <form className="space-y-4">
+              <div className="flex flex-col">
+                <label htmlFor="updatedWord" className="text-lg font-medium">
                   Word
                 </label>
                 <input
@@ -63,11 +63,11 @@ const ShowWord = ({ word, onClose, onDelete }) => {
                   name="word"
                   value={updatedWord.word}
                   onChange={handleInputChange}
-                  className="w-full p-2 border rounded"
+                  className="border rounded-md py-2 px-3 mt-1"
                 />
               </div>
-              <div className="mb-4">
-                <label htmlFor="updatedDefinition" className="block mb-2">
+              <div className="flex flex-col">
+                <label htmlFor="updatedDefinition" className="text-lg font-medium">
                   Definition
                 </label>
                 <textarea
@@ -75,10 +75,12 @@ const ShowWord = ({ word, onClose, onDelete }) => {
                   name="definition"
                   value={updatedWord.definition}
                   onChange={handleInputChange}
-                  className="w-full p-2 border rounded"></textarea>
+                  className="border rounded-md py-2 px-3 mt-1 max-h-[200px]"
+                  rows="2"
+                ></textarea>
               </div>
-              <div className="mb-4">
-                <label htmlFor="updatedExample" className="block mb-2">
+              <div className="flex flex-col">
+                <label htmlFor="updatedExample" className="text-lg font-medium">
                   Example
                 </label>
                 <textarea
@@ -86,26 +88,34 @@ const ShowWord = ({ word, onClose, onDelete }) => {
                   name="example"
                   value={updatedWord.example}
                   onChange={handleInputChange}
-                  className="w-full p-2 border rounded"></textarea>
+                  className="border rounded-md py-2 px-3 mt-1 max-h-[250px]"
+                  rows="2"
+                ></textarea>
               </div>
               <button
                 type="button"
                 onClick={handleUpdate}
-                className="bg-blue-500 text-white px-4 py-2 rounded">
+                className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300">
                 Update
               </button>
             </form>
           </div>
         ) : (
           <div>
-            <h2>{word.word}</h2>
-            <p>Definition: {word.definition}</p>
-            <p>Example: {word.example}</p>
-            <div>
-              <button type="button" onClick={() => setIsEditing(true)}>
+            <h2 className="text-2xl font-semibold">{word.word}</h2>
+            <p className="text-lg font-medium">Definition: {word.definition}</p>
+            <p className="text-lg font-medium">Example: {word.example}</p>
+            <div className="space-x-4">
+              <button
+                type="button"
+                onClick={() => setIsEditing(true)}
+                className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300">
                 Update
               </button>
-              <button type="button" onClick={handleDelete}>
+              <button
+                type="button"
+                onClick={handleDelete}
+                className="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition duration-300">
                 Delete
               </button>
             </div>

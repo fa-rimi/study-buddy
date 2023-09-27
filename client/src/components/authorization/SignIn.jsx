@@ -66,6 +66,7 @@ const SignIn = () => {
             onChange={handleChange}
             required
             className="border rounded-md py-2 px-3 w-full"
+            autoComplete="off"
           />
           <div className="password-input flex items-center rounded-md w-full relative">
             <input

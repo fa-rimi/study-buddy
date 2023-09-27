@@ -71,6 +71,7 @@ const SignUp = () => {
             onChange={handleChange}
             required
             className="border rounded-md py-2 px-3 w-full"
+            autoComplete="off" 
           />
           <input
             type="email"
@@ -80,6 +81,7 @@ const SignUp = () => {
             onChange={handleChange}
             required
             className="border rounded-md py-2 px-3 w-full"
+            autoComplete="off"
           />
           <input
             type="password"
